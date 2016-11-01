@@ -17,7 +17,7 @@ module.exports = function ({
 	};
 
 	const contentToBuffer = () => function (currentChunk) {
-		currentChunk._contents = new Buffer(JSON.stringify(currentChunk._contents, null, 2));
+		currentChunk._contents = Buffer.from(JSON.stringify(currentChunk._contents, null, 2));
 		return Promise.resolve(currentChunk);
 	};
 
